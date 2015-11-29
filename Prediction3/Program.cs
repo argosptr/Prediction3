@@ -685,7 +685,7 @@ namespace Prediction3
                             StraightDis.Y += (float)Math.Sin(Angle) * 500;
                             if (Drawing.WorldToScreen(Variables.EnemyTracker[enemyIndex].EnemyTracker.Position).Y > 15)
                             {
-                                Drawing.DrawLine(Drawing.WorldToScreen(Variables.EnemyTracker[enemyIndex].EnemyTracker.Position), StraightDis, Color.Red);
+                                Drawing.DrawLine(Drawing.WorldToScreen(Variables.EnemyTracker[enemyIndex].EnemyTracker.Position), StraightDis, Color.DarkGreen);
                                 Drawing.DrawText(string.Format("{0} {1}", GlobalClasses.GetHeroNameFromLongHeroName(enemy.Name), GlobalClasses.GetTimeDifference(Variables.EnemyTracker[enemyIndex].RelativeGameTime)), Drawing.WorldToScreen(Variables.EnemyTracker[enemyIndex].EnemyTracker.Position), Color.Cyan, FontFlags.AntiAlias | FontFlags.Outline);
                             }
                         }
