@@ -308,11 +308,11 @@ namespace Prediction3
             if (difference == 0)
                 return "";
             else if (difference < 2)
-                return difference.ToString() + " second ago";
+                return difference.ToString() + " detik";
             else if (difference < 60)
-                return difference.ToString() + " seconds ago";
+                return difference.ToString() + " detik";
             else
-                return ConvertIntToTimeString(difference) + " ago";
+                return ConvertIntToTimeString(difference) + " lalu";
         }
         public static string GetHeroNameFromLongHeroName(string Name)
         {
@@ -886,7 +886,7 @@ namespace Prediction3
             CustomReturnRune cus = new CustomReturnRune();
             cus.customRune = rune;
             cus.color = Color.Green;
-            cus.RuneType = "unknown";
+            cus.RuneType = "Ga keliatan";
             try
             {
 
@@ -896,7 +896,7 @@ namespace Prediction3
                     return cus;
                 switch (cus.RuneType)
                 {
-                    case "unknown": cus.color = Color.Green; break;
+                    case "Ga keliatan": cus.color = Color.Green; break;
                     case "DoubleDamage": cus.RuneType = "Double Damage"; cus.color = Color.Cyan; break;
                     case "Invisibility": cus.color = Color.Purple; break;
                     case "Illusion": cus.color = Color.Yellow; break;
@@ -909,7 +909,7 @@ namespace Prediction3
             }
             catch
             {
-                cus.RuneType = "gone";
+                cus.RuneType = "Ilang";
                 return cus;
             }
         }
