@@ -30,7 +30,36 @@ namespace Prediction3
             Variables.BottomRune.rune = new Rune();
             Drawing.OnDraw += Drawing_OnDraw; //Graphical Drawer
         }
+        #region Not in use
+        private static void Drawing_OnEndScene(EventArgs args)
+        {
+            if (Variables.DrawNotification)
+            {
+                int width = Variables.font.MeasureText(null, Variables.NotificationText, FontDrawFlags.Left).Width / 2;
+                Variables.font.DrawText(null, Variables.NotificationText, (1920 / 2) - width, 75, Color.Red);
+            }
+        }
 
+        private static void CurrentDomain_DomainUnload(object sender, EventArgs e)
+        {
+            Variables.font.Dispose();
+        }
+
+        private static void Drawing_OnPreReset(EventArgs args)
+        {
+            Variables.font.OnLostDevice();
+        }
+
+        private static void Drawing_OnPostReset(EventArgs args)
+        {
+            Variables.font.OnResetDevice();
+        }
+
+        private static void Game_OnUpdate(EventArgs args)
+        {
+
+        }
+        #endregion
         private static void Drawing_OnDraw(EventArgs args)
         {
             #region Fundamentals
